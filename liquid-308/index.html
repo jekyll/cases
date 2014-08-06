@@ -1,0 +1,7 @@
+---
+author: parkr
+---
+
+{% assign author_path = 'authors/~-published-that.html' | replace: '~', page.author %}
+{{ author_path }}
+{% include {{author_path}} %}
