@@ -1,0 +1,22 @@
+---
+myvar: 201
+---
+
+version: {{ jekyll.version }}
+
+## this works
+
+{% assign number = 200 %}
+{{ number | divided_by: 10 }} == 20
+
+{% assign division = page.myvar | divided_by: 3 %}
+{{ division }} == 67
+
+## this fails
+
+{% assign text = "a text with lots of words" %}
+{% assign words = text | split:" " | size | divided_by: 3 | round %}
+{{ words }} == 2
+
+{% assign number = 4 %}
+{{ number | divided_by: 3 | floor }} == 1
